@@ -81,10 +81,10 @@ public final class Main
         // | "hi", test a bunch of more advanced features.
         se.eval("use v5; use feature 'say'; use strict; say \"14: hi\";");
         
-        // 3.141592653589793
+        // | 3.141592653589793
         se.eval("package Math { import => \"java.lang.Math\" }; $x = Math->PI; print(\"15: $x\n\"); ");
 
-        // 3.141592653589793, turns out no need of above statement.
+        // | 3.141592653589793, turns out no need of above statement.
         se.eval("$x = Math->PI; print(\"16: $x\n\"); ");
                 
         se.put("Gift", new Gift());
@@ -101,7 +101,8 @@ public final class Main
         args1.aset(3, "the");
         args1.aset(4, "hypnotoad");
         args1.aset(5, new Gift()); 
-        // ob will invoke our Gift utility.        
+        
+        // | ob will invoke our Gift utility.        
         ob.apply(1, args1);
     }
 }
