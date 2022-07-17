@@ -1,0 +1,2 @@
+#!/bin/bash
+javac -cp ./perlito5.jar:./perlito5-lib.jar:. Main.java
