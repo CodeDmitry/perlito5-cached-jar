@@ -44,16 +44,16 @@ public final class Main
         // | something more fun, a hash mapping scalars to CODE refs.
         se.eval (
 "our %obj1 = ( \n" +
-"    greet1 => sub { print \"Hey!\"; },\n" +
-"    greet2 => sub { print \"Yo!\"; },\n" +
-"    greet3 => sub { print \"Sup!\"; },\n" +
-"    greet4 => sub { print \"Hello!\"; },\n" +
-"    greet5 => sub { print \"Well Met!\"; },\n" +
+"    greet1 => sub { print \"Hey!\\n\"; },\n" +
+"    greet2 => sub { print \"Yo!\\n\"; },\n" +
+"    greet3 => sub { print \"Sup!\\n\"; },\n" +
+"    greet4 => sub { print \"Hello!\\n\"; },\n" +
+"    greet5 => sub { print \"Well Met!\\n\"; },\n" +
 ")");
         // | HASH(R1), we will see R1 again later.
         System.out.println("07:01: " +  se.eval("\\%obj1"));
-
-        // | 5        
+        
+        // | "5", the argument count of obj1        
         System.out.println("08: " + se.eval("scalar keys %obj1"));
         
         // | org.perlito.Perlito5.PlLvalue
@@ -73,6 +73,10 @@ public final class Main
         // | CODE(0x64f9f455), PlEval159$1$5
         PlObject objObj01 = hash1.hget("greet5");
         System.out.println("13: " + objObj01 + ", " + objObj01.getClass().getName());
+
+        // | invoke $greet5->(), note that an empty array is necessary, null will not work.
+        System.out.print("13:00: ");
+        objObj01.apply(0, new PlArray());
         
         // | "hi", test a bunch of more advanced features.
         se.eval("use v5; use feature 'say'; use strict; say \"14: hi\";");
