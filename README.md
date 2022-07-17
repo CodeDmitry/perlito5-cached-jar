@@ -19,5 +19,5 @@ I made this cache for two reasons:
 
 testing was done via `bash build && bash run`.
 
-Compiled on linux mint, but works on Windows as well.
+Compiled on Linux Mint, but works on Windows as well.
 
