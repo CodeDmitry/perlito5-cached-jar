@@ -23,3 +23,5 @@ testing was done via `bash build && bash run`.
 
 Compiled on Linux Mint, but works on Windows as well.
 
+**Known Issues**:
+1. Perl has no null, so everything works until suddenly you want to do `$jframe->setLocationRelativeTo(null)` but null does not exist, undef is a PlLvalue, not null, there are no nulls, and all my attempts to smuggle "null" over for such cases like this or `$jframe->getContentPane()->setLayout(null)` have failed, so it seems necessary to provide alternative null-less apis or workarounds if you want to deal with functions that accept null.
