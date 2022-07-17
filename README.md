@@ -1,7 +1,7 @@
 # perlito5-cached-jar
 cached(local repository hosted) version of perlito5 built on linux mint, see https://github.com/fglock/Perlito
 
-Perlito is a an implementation of "Perl5" javax.scripting.ScriptEngine for javax.scripting.ScriptEngineManager. It can be used for making a script console in your Java program and shares a model with it, allowing you to alter the java model from the scripting context. It is not completely obvious how to share the model with it, but based on my tests, if you are clever, you can do it.
+Perlito is a an implementation of "Perl5" javax.scripting.ScriptEngine for javax.scripting.ScriptEngineManager. It can be used for making a script console in your Java program and shares a model with it, allowing you to alter the java model from the scripting context. It is not completely obvious how to share the model with it, but based on my tests, if you are clever, you can do it(worst case scenario, by sending the shared object to a subroutine as an argument via `apply`, and have that subroutine hook it up to the global state for you).
 
 javadoc can be found here unless it gets moved: https://codedmitry.github.io/perlito5-cached-jar/
 
